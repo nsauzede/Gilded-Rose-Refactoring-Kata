@@ -37,9 +37,9 @@ class GildedRose:
                     self.quality = self.quality + 1
 
     def normal_tick(self):
-        if self.quality > 0:
-            if self.days_remaining > 0:
-                self.quality -=1
-            if self.days_remaining <= 0:
-                self.quality -= 2
-        self.days_remaining -= 1
+        self.days_remaining -=1
+        if self.quality == 0:
+            return
+        self.quality -= 1
+        if self.days_remaining <= 0:
+            self.quality -= 1
