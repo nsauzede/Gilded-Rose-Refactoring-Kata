@@ -11,6 +11,8 @@ class GildedRose:
                 return self.normal_tick()
             case "Aged Brie":
                 return self.brie_tick()
+            case "Sulfuras, Hand of Ragnaros":
+                return self.sulfuras_tick()
         if self.name != "Aged Brie" and self.name != "Backstage passes to a TAFKAL80ETC concert":
             if self.quality > 0:
                 if self.name != "Sulfuras, Hand of Ragnaros":
@@ -38,6 +40,8 @@ class GildedRose:
             else:
                 if self.quality < 50:
                     self.quality = self.quality + 1
+    def sulfuras_tick(self):
+        return
     def brie_tick(self):
         self.days_remaining -= 1
         self.quality += 1
