@@ -6,6 +6,8 @@ class GildedRose:
         self.quality = quality
 
     def tick(self):
+        if self.name == "Normal Item":
+            return self.normal_tick()
         if self.name != "Aged Brie" and self.name != "Backstage passes to a TAFKAL80ETC concert":
             if self.quality > 0:
                 if self.name != "Sulfuras, Hand of Ragnaros":
@@ -33,3 +35,6 @@ class GildedRose:
             else:
                 if self.quality < 50:
                     self.quality = self.quality + 1
+
+    def normal_tick(self):
+        pass
