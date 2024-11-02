@@ -32,8 +32,17 @@ class Backstage(Item):
             self.quality += 1
         if self.days_remaining < 5:
             self.quality += 1
+class Conjured(Item):
+    def tick(self):
+        self.days_remaining -= 1
+        if self.quality == 0:
+            return
+        self.quality -= 2
+        if self.days_remaining <= 0:
+            self.quality -= 2
 def GildedRose(name, days_remaining, quality):
     return Normal(quality, days_remaining) if name == "Normal Item" else \
         Brie(quality, days_remaining) if name == "Aged Brie" else \
         Backstage(quality, days_remaining) if name == "Backstage passes to a TAFKAL80ETC concert" else \
+        Conjured(quality, days_remaining) if name == "Conjured Mana Cake" else \
         Item(quality, days_remaining)

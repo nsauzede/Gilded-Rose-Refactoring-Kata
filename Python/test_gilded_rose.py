@@ -182,42 +182,36 @@ class GildedRoseConjuredManaTest(unittest.TestCase):
     def setUp(self):
         self.name = "Conjured Mana Cake"
 
-    @unittest.skip("Not yet implemented")
     def test_before_sell_date(self):
         gilded_rose = GildedRose(self.name, 5, 10)
         gilded_rose.tick()
         self.assertEqual(gilded_rose.days_remaining, 4)
         self.assertEqual(gilded_rose.quality, 8)
 
-    @unittest.skip("Not yet implemented")
     def test_before_sell_date_at_zero_quality(self):
         gilded_rose = GildedRose(self.name, 5, 0)
         gilded_rose.tick()
         self.assertEqual(gilded_rose.days_remaining, 4)
         self.assertEqual(gilded_rose.quality, 0)
 
-    @unittest.skip("Not yet implemented")
     def test_on_sell_date(self):
         gilded_rose = GildedRose(self.name, 0, 10)
         gilded_rose.tick()
         self.assertEqual(gilded_rose.days_remaining, -1)
         self.assertEqual(gilded_rose.quality, 6)
 
-    @unittest.skip("Not yet implemented")
     def test_on_sell_date_at_zero_quality(self):
         gilded_rose = GildedRose(self.name, 0, 0)
         gilded_rose.tick()
         self.assertEqual(gilded_rose.days_remaining, -1)
         self.assertEqual(gilded_rose.quality, 0)
 
-    @unittest.skip("Not yet implemented")
     def test_after_sell_date(self):
         gilded_rose = GildedRose(self.name, -10, 10)
         gilded_rose.tick()
         self.assertEqual(gilded_rose.days_remaining, -11)
         self.assertEqual(gilded_rose.quality, 6)
 
-    @unittest.skip("Not yet implemented")
     def test_after_sell_date_at_zero_quality(self):
         gilded_rose = GildedRose(self.name, -10, 0)
         gilded_rose.tick()
